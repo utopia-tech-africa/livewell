@@ -11,12 +11,7 @@ export const ComponentLayout = ({
   className,
 }: ComponentLayoutProps) => {
   return (
-    <div
-      className={cn(
-        "w-full border border-red-500 px-4 md:px-8 lg:px-20",
-        className
-      )}
-    >
+    <div className={cn("w-full px-4 md:px-8 lg:px-20", className)}>
       {children}
     </div>
   );

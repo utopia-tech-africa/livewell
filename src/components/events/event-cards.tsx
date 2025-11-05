@@ -8,11 +8,17 @@ type EventItem = EVENTS_QUERYResult[number];
 export const EventCards = async () => {
   const eventCards: EVENTS_QUERYResult | string = await fetchEvents();
 
-  if (typeof eventCards === "string")
+  if (typeof eventCards === "string") {
     return <ErrorText>Network Error!</ErrorText>;
+  }
+
+  if (!eventCards || eventCards.length === 0)
+    return (
+      <ErrorText className="text-center">No Event Details Found</ErrorText>
+    );
 
   return (
-    <div className="grid grid-cols-4 gap-6">
+    <div className="flex gap-6 overflow-x-auto">
       {eventCards.map((event: EventItem) => (
         <EventCard key={event._id} {...event} />
       ))}
