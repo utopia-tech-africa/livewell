@@ -3,8 +3,10 @@ import { SocialWallCards } from "./social-wall-cards";
 
 export const SocialWall = () => {
   return (
-    <ComponentLayout>
-      <SocialWallCards />
-    </ComponentLayout>
+    <section id="media">
+      <ComponentLayout>
+        <SocialWallCards />
+      </ComponentLayout>
+    </section>
   );
 };
