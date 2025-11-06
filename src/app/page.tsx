@@ -1,5 +1,6 @@
 import { Footer, Navbar } from "@/components";
 import { Events } from "@/components/events";
+import { News } from "@/components/news";
 import { SocialWall } from "@/components/social-wall";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <Events />
       <SocialWall />
+      <News />
       <Footer />
     </main>
   );
