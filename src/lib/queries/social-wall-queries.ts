@@ -4,10 +4,8 @@ import { defineQuery } from "next-sanity";
 // fetch social wall images //
 export const fetchSocialWallImages = async () => {
   const SOCIAL_WALL_QUERY = defineQuery(`*[_type == "socialWall"]{
-  _id,
   images[]{
     asset->{
-      _id,
       url
     }
   }

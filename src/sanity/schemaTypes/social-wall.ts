@@ -11,7 +11,7 @@ export default defineType({
       name: "images",
       title: "Images",
       type: "array",
-      description: "Upload one or more images for the social wall.",
+      description: "Upload images for the social wall.",
       of: [
         {
           type: "image",
@@ -19,7 +19,7 @@ export default defineType({
         },
       ],
       validation: (Rule) =>
-        Rule.required().min(1).warning("Please upload at least one image."),
+        Rule.required().min(8).warning("Please upload at least one image."),
     }),
   ],
 
