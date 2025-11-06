@@ -18,7 +18,7 @@ export const EventCards = async () => {
     );
 
   return (
-    <div className="flex gap-6 overflow-x-auto">
+    <div className="w-full flex gap-6 overflow-x-auto">
       {eventCards.map((event: EventItem) => (
         <EventCard key={event._id} {...event} />
       ))}

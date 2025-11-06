@@ -5,7 +5,7 @@ type EventCardProps = EVENTS_QUERYResult[0];
 
 export const EventCard = ({ name, image, description }: EventCardProps) => {
   return (
-    <div className="flex flex-col gap-6 bg-white overflow-hidden group">
+    <div className="flex flex-col min-w-[302px] gap-6 bg-white overflow-hidden group">
       <div className="w-full h-80 overflow-hidden rounded">
         <Image
           src={image?.asset?.url || ""}

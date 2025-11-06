@@ -10,7 +10,9 @@ export const Heading = ({ children, className }: HeadingProps) => {
   return (
     <div
       className={cn(
-        "py-3 px-5 w-fit text-center font-bold -rotate-3 shadow-[6px_8px_4px_0px_#7474742E] rounded flex",
+        "py-2 px-3 sm:py-3 sm:px-5 inline-block text-center font-bold -rotate-1 sm:-rotate-3",
+        "shadow-[6px_8px_4px_0px_#7474742E] rounded",
+        "text-lg sm:text-[28px] md:text-[32px]",
         className
       )}
     >

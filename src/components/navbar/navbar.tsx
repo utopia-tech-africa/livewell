@@ -73,7 +73,7 @@ export const Navbar = () => {
 
           {/* desktop button */}
           <div className="hidden md:block">
-            <Button className="bg-primary-600 hover:bg-primary-700 text-white px-6">
+            <Button className="bg-primary-600 w-[252px] text-white px-6">
               Reserve Your Spot
             </Button>
           </div>
@@ -97,14 +97,14 @@ export const Navbar = () => {
                   <a
                     href={item.link}
                     onClick={(e) => handleNavClick(e, item.link)}
-                    className="block font-satoshi font-bold text-lg text-neutral-900 hover:text-primary-600 transition"
+                    className="block font-satoshi font-bold text-lg text-neutral-900"
                   >
                     {item.label}
                   </a>
                 </li>
               ))}
               <li>
-                <Button className="w-full bg-primary-600 hover:bg-primary-700 text-white">
+                <Button className="w-full bg-primary-600 text-white">
                   Reserve Your Spot
                 </Button>
               </li>
