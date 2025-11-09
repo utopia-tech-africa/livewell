@@ -3,6 +3,7 @@ import { Events } from "@/components/events";
 import { Faq } from "@/components/faq/faq";
 import { Hero } from "@/components/hero";
 import { News } from "@/components/news";
+import { SeatReservation } from "@/components/seat-reservation";
 import { SocialWall } from "@/components/social-wall";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Events />
       <SocialWall />
+      <SeatReservation />
       <Faq />
       <News />
       <Footer />
