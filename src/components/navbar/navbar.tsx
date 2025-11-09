@@ -112,9 +112,6 @@ export const Navbar = () => {
           </nav>
         )}
       </header>
-
-      {/* Example placeholder */}
-      <div className="pt-24">HERO</div>
     </>
   );
 };
