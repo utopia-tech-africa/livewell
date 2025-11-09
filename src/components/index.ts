@@ -6,3 +6,4 @@ export * from "./social-wall";
 export * from "./navbar";
 export * from "./footer";
 export * from "./news";
+export * from "./hero";

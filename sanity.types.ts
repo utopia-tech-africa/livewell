@@ -214,6 +214,11 @@ export type EVENTS_QUERYResult = Array<{
   description: string | null;
 }>;
 
+// Source: ./src/lib/queries/faqs-queries.ts
+// Variable: FAQs_QUERY
+// Query: *[_type == "faqSection"] | order(publishDate desc) {  _id,  title,  faqs[]{    question,    answer  }}
+export type FAQs_QUERYResult = Array<never>;
+
 // Source: ./src/lib/queries/news-queries.ts
 // Variable: NEWS_ARTICLES_QUERY
 // Query: *[_type == "news"] | order(publishDate desc){    _id,    title,    mainImage{    asset->{    _id,    url    }    },      slug,      publishedDate,    }
@@ -246,6 +251,7 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"event\"] | order(publishDate desc){\n        _id,\n        name,\n        image{\n        asset->{\n        _id,\n        url}\n        },\n        description,\n    }": EVENTS_QUERYResult;
+    "*[_type == \"faqSection\"] | order(publishDate desc) {\n  _id,\n  title,\n  faqs[]{\n    question,\n    answer\n  }\n}\n\n": FAQs_QUERYResult;
     "*[_type == \"news\"] | order(publishDate desc){\n    _id,\n    title,\n    mainImage{\n    asset->{\n    _id,\n    url\n    }\n    },\n      slug,\n      publishedDate,\n    }": NEWS_ARTICLES_QUERYResult;
     "*[_type == \"socialWall\"]{\n  images[]{\n    asset->{\n      url\n    }\n  }\n}\n": SOCIAL_WALL_QUERYResult;
   }
