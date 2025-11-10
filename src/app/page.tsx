@@ -1,4 +1,4 @@
-import { Footer, Navbar } from "@/components";
+import { About, Footer, Navbar, SponsorsBanner } from "@/components";
 import { Events } from "@/components/events";
 import { Faq } from "@/components/faq/faq";
 import { Hero } from "@/components/hero";
@@ -8,9 +8,11 @@ import { SocialWall } from "@/components/social-wall";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-y-20 w-full min-h-dvh">
+    <main className="flex flex-col w-full min-h-dvh">
       <Navbar />
       <Hero />
+      <SponsorsBanner />
+      <About />
       <Events />
       <SocialWall />
       <SeatReservation />

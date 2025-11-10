@@ -6,9 +6,8 @@ import { ScrollIndicator } from "../scroll-indicator";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden text-white">
-      {/* Background */}
-      <div className="absolute inset-0">
+    <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden text-white">
+      <div className="absolute inset-0 -z-10">
         <Image
           src={HeroImg}
           alt="LiveWell event"
@@ -16,21 +15,33 @@ export const Hero = () => {
           priority
           className="object-cover"
         />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.7) 100%)",
-          }}
-        />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black/80" />
       </div>
 
-      {/* Left Countdown */}
-      <div className="absolute left-6 top-[50%] -translate-y-1/2 flex flex-col items-center gap-2 text-center">
-        <span className="text-sm md:text-base font-semibold tracking-widest uppercase">
+      {/* mobile */}
+      <div className="sm:hidden w-full py-6">
+        <div className="flex flex-col items-center gap-2 text-center">
+          <span className="text-sm font-semibold tracking-widest uppercase">
+            Countdown
+          </span>
+          <div className="flex gap-2 font-extrabold font-satoshi text-3xl xs:text-4xl leading-none">
+            <span>50</span>
+            <span>:</span>
+            <span>12</span>
+            <span>:</span>
+            <span>35</span>
+            <span>:</span>
+            <span>12</span>
+          </div>
+        </div>
+      </div>
+
+      {/* desktop */}
+      <div className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-2 text-center">
+        <span className="text-xs sm:text-sm md:text-base font-semibold tracking-widest uppercase">
           Countdown
         </span>
-        <div className="flex flex-row md:flex-col gap-2 font-extrabold font-satoshi text-4xl md:text-5xl leading-none">
+        <div className="flex flex-col gap-1 md:gap-2 font-extrabold font-satoshi text-3xl md:text-5xl leading-none">
           <span>50</span>
           <span>:</span>
           <span>12</span>
@@ -41,34 +52,43 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Hero text center */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center h-full px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 lg:px-12 flex-1">
         <div className="max-w-3xl flex flex-col items-center gap-6">
-          <h1 className="text-[40px] sm:text-[60px] lg:text-[70px] font-extrabold tracking-tight italic">
+          <h1 className="text-[34px] sm:text-[52px] md:text-[64px] lg:text-[72px] font-extrabold tracking-tight italic leading-tight">
             LIVEWELL FOR LIFE
           </h1>
-          <p className="text-base sm:text-lg max-w-xl opacity-90">
+          <p className="text-sm sm:text-base md:text-lg max-w-xl opacity-90 leading-relaxed">
             A movement to inspire healthier living and build stronger
             communities.
           </p>
-          <Button className="bg-primary-500">Join the movement</Button>
+          <Button className="bg-primary-500 hidden sm:inline-flex text-sm sm:text-base px-5 sm:px-8 py-2 sm:py-3 mt-2">
+            Join the movement
+          </Button>
+          <Button className="bg-primary-500 sm:hidden text-sm px-5 py-2 mt-4">
+            Join the movement
+          </Button>
         </div>
       </div>
 
-      {/* Right social icons */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4">
-        <a href="#" className="hover:opacity-80">
-          <FaFacebookF size={18} />
-        </a>
-        <a href="#" className="hover:opacity-80">
-          <FaInstagram size={18} />
-        </a>
-        <a href="#" className="hover:opacity-80">
-          <FaLinkedinIn size={18} />
-        </a>
+      <div className="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 flex-col gap-4">
+        {[
+          { icon: <FaFacebookF size={18} />, href: "#" },
+          { icon: <FaInstagram size={18} />, href: "#" },
+          { icon: <FaLinkedinIn size={18} />, href: "#" },
+        ].map(({ icon, href }, i) => (
+          <a
+            key={i}
+            href={href}
+            className="hover:opacity-80 transition-opacity duration-200"
+          >
+            {icon}
+          </a>
+        ))}
       </div>
 
-      <ScrollIndicator />
+      <div className="flex justify-center mb-6 sm:mb-10">
+        <ScrollIndicator />
+      </div>
     </section>
   );
 };

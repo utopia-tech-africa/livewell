@@ -2,7 +2,7 @@ import { ArrowDown } from "lucide-react";
 
 export const ScrollIndicator = () => {
   return (
-    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex items-center justify-center text-white">
+    <div className="flex items-center justify-center text-white md:absolute md:bottom-8 md:left-1/2 md:-translate-x-1/2 md:z-30 w-full">
       <div className="relative w-[100.26px] h-[100.16px]">
         <svg
           viewBox="0 0 120 120"
@@ -35,13 +35,12 @@ export const ScrollIndicator = () => {
             </text>
           </defs>
 
-          {/* Use the same text element with different rotations */}
+          {/* use same text element with different rotations */}
           <use href="#scrollText" transform="rotate(0 60 60)" />
           <use href="#scrollText" transform="rotate(120 60 60)" />
           <use href="#scrollText" transform="rotate(240 60 60)" />
         </svg>
 
-        {/* Center arrow */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <ArrowDown className="w-8 h-8 text-white" strokeWidth={2.5} />
         </div>
