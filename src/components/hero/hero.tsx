@@ -6,7 +6,7 @@ import { ScrollIndicator } from "../scroll-indicator";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-between overflow-hidden text-white">
+    <section className="relative w-full min-h-[95vh] flex flex-col justify-between overflow-hidden text-white">
       <div className="absolute inset-0 -z-10">
         <Image
           src={HeroImg}
@@ -19,12 +19,12 @@ export const Hero = () => {
       </div>
 
       {/* mobile */}
-      <div className="sm:hidden w-full py-6">
+      <div className="sm:hidden w-full pt-40">
         <div className="flex flex-col items-center gap-2 text-center">
-          <span className="text-sm font-semibold tracking-widest uppercase">
+          <span className="text-sm font-semibold tracking-widest italic">
             Countdown
           </span>
-          <div className="flex gap-2 font-extrabold font-satoshi text-3xl xs:text-4xl leading-none">
+          <div className="flex gap-2 font-extrabold font-satoshi text-[24px] md:text-[26px] lg:text-[38px] leading-none">
             <span>50</span>
             <span>:</span>
             <span>12</span>

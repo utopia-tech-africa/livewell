@@ -23,7 +23,6 @@ export const SocialWallCards = async () => {
           absolute font-satoshi left-1/2 -translate-x-[42%]
           -top-6 md:-top-11 lg:-top-14
           bg-secondary-500 text-neutral-100 
-          shadow-md
         z-10 text-[18px] sm:text-[20px] md:text-[24px] lg:text-[32px] font-bold
         "
       >

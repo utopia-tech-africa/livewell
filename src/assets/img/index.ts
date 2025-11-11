@@ -1,5 +1,8 @@
 import HeroImg from "./hero-img.webp";
 import BluePattern from "./blue-pattern.webp";
+import BluePatternLeft from "./blue-pattern-left.png";
+import BluePatternRight from "./blue-pattern-right.png";
+
 import SponsoredBy from "./sponsored-by.png";
 import LivewellLogo from "./livewell-logo.webp";
 import BallGbeeLogo from "./ballgbee-logo.png";
@@ -13,6 +16,8 @@ import VolunteerFormImg from "./volunteer-form-img.webp";
 export {
   HeroImg,
   BluePattern,
+  BluePatternLeft,
+  BluePatternRight,
   SponsoredBy,
   LivewellLogo,
   BallGbeeLogo,

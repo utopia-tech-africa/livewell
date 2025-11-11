@@ -1,4 +1,4 @@
-import { About, Footer, Navbar, SponsorsBanner } from "@/components";
+import { About, Footer, Navbar, SponsorsBanner, Volunteer } from "@/components";
 import { Events } from "@/components/events";
 import { Faq } from "@/components/faq/faq";
 import { Hero } from "@/components/hero";
@@ -15,6 +15,7 @@ export default function Home() {
       <About />
       <Events />
       <SocialWall />
+      <Volunteer />
       <SeatReservation />
       <Faq />
       <News />

@@ -10,3 +10,4 @@ export * from "./hero";
 export * from "./seat-reservation";
 export * from "./about";
 export * from "./sponsors-banner";
+export * from "./volunteer";
