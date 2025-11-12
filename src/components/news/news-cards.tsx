@@ -1,5 +1,4 @@
 import { fetchNewsArticles } from "@/lib/queries/news-queries";
-import { Heading } from "../texts/heading";
 import { ErrorText } from "../texts/error-text";
 import { NewsCard } from "./news-card";
 

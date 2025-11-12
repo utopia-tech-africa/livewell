@@ -13,7 +13,7 @@ export const Hero = () => {
           alt="LiveWell event"
           fill
           priority
-          className="object-cover"
+          className="object-cover h-[651px]"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black/80" />
       </div>
@@ -37,11 +37,11 @@ export const Hero = () => {
       </div>
 
       {/* desktop */}
-      <div className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-2 text-center">
-        <span className="text-xs sm:text-sm md:text-base font-semibold tracking-widest uppercase">
+      <div className="hidden sm:flex absolute left-4 md:left-8 top-[60%] -translate-y-1/2 flex-col items-center gap-2 text-center">
+        <span className="text-xs sm:text-sm md:text-base font-semibold tracking-widest italic">
           Countdown
         </span>
-        <div className="flex flex-col gap-1 md:gap-2 font-extrabold font-satoshi text-3xl md:text-5xl leading-none">
+        <div className="flex flex-col gap-1 md:gap-2 font-extrabold font-satoshi text-3xl md:text-[41px] leading-none">
           <span>50</span>
           <span>:</span>
           <span>12</span>
@@ -57,14 +57,11 @@ export const Hero = () => {
           <h1 className="text-[34px] sm:text-[52px] md:text-[64px] lg:text-[72px] font-extrabold tracking-tight italic leading-tight">
             LIVEWELL FOR LIFE
           </h1>
-          <p className="text-sm sm:text-base md:text-lg max-w-xl opacity-90 leading-relaxed">
+          <p className="text-sm hidden md:block sm:text-base md:text-lg max-w-xl opacity-90 leading-relaxed">
             A movement to inspire healthier living and build stronger
             communities.
           </p>
           <Button className="bg-primary-500 hidden sm:inline-flex text-sm sm:text-base px-5 sm:px-8 py-2 sm:py-3 mt-2">
-            Join the movement
-          </Button>
-          <Button className="bg-primary-500 sm:hidden text-sm px-5 py-2 mt-4">
             Join the movement
           </Button>
         </div>

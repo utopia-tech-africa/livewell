@@ -20,7 +20,7 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         brand:
-          "text-[18px] font-extrabold font-satoshi bg-secondary-500 text-center text-neutral-100 border border-neutral-500 px-[48px] py-[12px] rounded-[100px] shadow-[0_3px_0px_rgba(0,0,0,8)] transition-all duration-300 ease-out hover:-translate-y-0.2 hover:shadow-[0_8px_0px_rgba(0,0,0,8)] active:translate-y-0 active:shadow-[0_6px_0px_rgba(0,0,0,8)]",
+          "text-[18px] font-extrabold font-satoshi bg-secondary-500 text-center text-neutral-100 border border-neutral-500 px-[48px] py-[12px] rounded-[100px] shadow-[0_3px_0px_rgba(0,0,0,8)] transition-all hover:cursor-pointer duration-300 ease-out hover:-translate-y-0.2 hover:shadow-[0_8px_0px_rgba(0,0,0,8)] active:translate-y-0 active:shadow-[0_6px_0px_rgba(0,0,0,8)]",
       },
       size: {
         default: "text-lg",
