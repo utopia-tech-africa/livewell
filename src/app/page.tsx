@@ -20,7 +20,7 @@ export default function Home() {
         <Image
           src={WhitePattern}
           alt={"white background pattern"}
-          className="absolute right-0 top-22 w-full"
+          className="absolute right-0 top-22 w-full hidden md:block md:h-[400px] lg:h-[800px]"
         />
         <SocialWall />
         <Volunteer />
