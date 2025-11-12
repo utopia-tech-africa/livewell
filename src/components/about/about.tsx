@@ -29,7 +29,7 @@ export const About = () => {
           It&apos;s more than an event!
         </h1>
 
-        <Heading className="bg-primary-500 font-bold text-[18px] sm:text-[20px] md:text-[24px] lg:text-[32px] italic font-satoshi text-secondary-100 mb-3 z-10 -mt-7 md:-mt-10 transition-transform duration-300 ease-in-out group-hover:-translate-y-3 px-4 py-2">
+        <Heading className="bg-primary-500 font-bold text-[18px] sm:text-[20px] md:text-[24px] lg:text-[32px] italic font-satoshi text-neutral-100 mb-3 z-10 -mt-7 md:-mt-10 transition-transform duration-300 ease-in-out group-hover:-translate-y-3 px-4 py-2">
           it&apos;s a movement for better living
         </Heading>
 
