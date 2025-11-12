@@ -1,8 +1,10 @@
 import {
+  BallantinesLogo,
   BallGbeeLogo,
   BeyondLogo,
   BouquetLogo,
   GlassHouseLogo,
+  JamesonLogo,
   PluginLogo,
   SocialGoodLogo,
   SponsoredBy,
@@ -18,11 +20,13 @@ const bannerItems = [
   BouquetLogo,
   SocialGoodLogo,
   BeyondLogo,
+  JamesonLogo,
+  BallantinesLogo,
 ];
 
 export const SponsorsBanner = () => {
   return (
-    <div className="w-full max-w-full bg-primary-600 py-6 overflow-hidden">
+    <div className="w-full max-w-full bg-primary-600 py-4 md:py-6 overflow-hidden">
       <InfiniteSlider gap={24} className="w-full">
         {bannerItems.map((item, index) => (
           <div

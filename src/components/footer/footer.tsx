@@ -20,7 +20,7 @@ export const Footer = () => {
         className="absolute right-0 top-0 h-[150px] w-[120px] sm:h-[200px] sm:w-[200px] md:h-[250px] md:w-[280px] lg:h-[309.96px] lg:w-[350px] object-cover opacity-90"
       />
 
-      <div className="relative flex flex-col lg:flex-row gap-10 md:gap-20 justify">
+      <div className="relative flex flex-col lg:flex-row gap-10 md:gap-20 justify-between">
         <div className="flex flex-col gap-4">
           <FooterLogo />
           <p className="text-sm font-font-general">

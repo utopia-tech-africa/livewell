@@ -1,22 +1,27 @@
 import Image from "next/image";
 import { Heading } from "../texts/heading";
-import { AboutPattern } from "@/assets/img";
+import { AboutPattern, AboutPatternMobile } from "@/assets/img";
 
 export const About = () => {
   return (
     <section className="group relative bg-[#232323] mb-[100px] md:mb-[110px] lg:mb-[130px] px-6 sm:px-10 py-12 sm:py-16 md:py-26 w-full rounded-br-[40px] rounded-bl-[40px] overflow-hidden">
-      {/* Pattern Background - Made responsive */}
       <div className="absolute inset-0 w-full h-full">
         <Image
           alt={"about background pattern"}
+          src={AboutPatternMobile}
+          className="block md:hidden w-full h-full object-cover"
+          fill
+          quality={80}
+        />
+
+        <Image
+          alt={"about background pattern"}
           src={AboutPattern}
-          className="w-full h-full object-cover  md:rotate-0 rotate-180"
+          className="hidden md:block w-full h-full object-cover  md:rotate-0 rotate-180"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           quality={80}
         />
-        {/* Optional overlay to ensure text readability
-        <div className="absolute inset-0 bg-[#232323]/80"></div> */}
       </div>
 
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6 relative z-10">
