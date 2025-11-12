@@ -4,7 +4,7 @@ import { AboutPattern, AboutPatternMobile } from "@/assets/img";
 
 export const About = () => {
   return (
-    <section className="group relative bg-[#232323] mb-[100px] md:mb-[110px] lg:mb-[130px] px-6 sm:px-10 py-12 sm:py-16 md:py-26 w-full rounded-br-[40px] rounded-bl-[40px] overflow-hidden">
+    <section className="group relative bg-[#232323] mb-[100px] md:mb-[110px] lg:mb-[130px] px-6 sm:px-10 py-34 sm:py-16 md:py-26 w-full rounded-br-[40px] rounded-bl-[40px] overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <Image
           alt={"about background pattern"}
