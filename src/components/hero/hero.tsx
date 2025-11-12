@@ -3,28 +3,29 @@ import { HeroImg } from "@/assets/img";
 import { Button } from "../ui/button";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { ScrollIndicator } from "../scroll-indicator";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full min-h-[95vh] flex flex-col justify-between overflow-hidden text-white">
+    <section className="relative w-full min-h-[95vh] flex flex-col justify-between items-center overflow-hidden text-white">
       <div className="absolute inset-0 -z-10">
         <Image
           src={HeroImg}
           alt="LiveWell event"
           fill
           priority
-          className="object-cover h-[651px]"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black/80" />
       </div>
 
-      {/* mobile */}
-      <div className="sm:hidden w-full pt-40">
-        <div className="flex flex-col items-center gap-2 text-center">
+      {/* Mobile Countdown */}
+      <div className="sm:hidden w-full pt-32 pb-8">
+        <div className="flex flex-col items-center gap-3 text-center">
           <span className="text-sm font-semibold tracking-widest italic">
             Countdown
           </span>
-          <div className="flex gap-2 font-extrabold font-satoshi text-[24px] md:text-[26px] lg:text-[38px] leading-none">
+          <div className="flex gap-3 font-extrabold font-satoshi text-2xl leading-none">
             <span>50</span>
             <span>:</span>
             <span>12</span>
@@ -36,12 +37,12 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* desktop */}
-      <div className="hidden sm:flex absolute left-4 md:left-8 top-[60%] -translate-y-1/2 flex-col items-center gap-2 text-center">
-        <span className="text-xs sm:text-sm md:text-base font-semibold tracking-widest italic">
+      {/* Desktop Countdown */}
+      <div className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-3 text-center">
+        <span className="text-sm md:text-base font-semibold tracking-widest italic">
           Countdown
         </span>
-        <div className="flex flex-col gap-1 md:gap-2 font-extrabold font-satoshi text-3xl md:text-[41px] leading-none">
+        <div className="flex flex-col gap-2 font-extrabold font-satoshi text-2xl md:text-3xl lg:text-[41px] leading-none">
           <span>50</span>
           <span>:</span>
           <span>12</span>
@@ -52,38 +53,47 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-8 lg:px-12 flex-1">
-        <div className="max-w-3xl flex flex-col items-center gap-6">
-          <h1 className="text-[34px] sm:text-[52px] md:text-[64px] lg:text-[72px] font-extrabold tracking-tight italic leading-tight">
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-12 flex-1 py-8 sm:py-12">
+        <div className="max-w-3xl lg:max-w-4xl flex flex-col items-center gap-4 sm:gap-6 md:gap-8">
+          <h1 className="text-4xl sm:text-[55px] md:text-[60px] lg:text-[65px] xl:text-[70px] font-extrabold tracking-tight italic leading-tight sm:leading-tight md:leading-tight">
             LIVEWELL FOR LIFE
           </h1>
-          <p className="text-sm hidden md:block sm:text-base md:text-lg max-w-xl opacity-90 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-md sm:max-w-xl md:max-w-2xl opacity-90 leading-relaxed sm:leading-relaxed md:leading-relaxed px-2 sm:px-0">
             A movement to inspire healthier living and build stronger
             communities.
           </p>
-          <Button className="bg-primary-500 hidden sm:inline-flex text-sm sm:text-base px-5 sm:px-8 py-2 sm:py-3 mt-2">
+          <Button className="bg-primary-500 hidden md:block text-sm sm:text-base md:text-lg mt-2 sm:mt-4 md:mt-6">
             Join the movement
           </Button>
         </div>
       </div>
 
-      <div className="hidden sm:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 flex-col gap-4">
-        {[
-          { icon: <FaFacebookF size={18} />, href: "#" },
-          { icon: <FaInstagram size={18} />, href: "#" },
-          { icon: <FaLinkedinIn size={18} />, href: "#" },
-        ].map(({ icon, href }, i) => (
-          <a
-            key={i}
-            href={href}
-            className="hover:opacity-80 transition-opacity duration-200"
-          >
-            {icon}
-          </a>
-        ))}
+      {/* Social Links with Full Height Vertical Line */}
+      <div className="hidden sm:flex absolute right-4 md:right-6 lg:right-8 top-0 bottom-0 items-center">
+        <div className="flex items-center h-full">
+          <div className="h-full w-px bg-white/40 mr-1"></div>
+          <div className="flex flex-col gap-4 md:gap-5">
+            {[
+              { icon: <FaFacebookF size={20} />, href: "#" },
+              { icon: <FaInstagram size={20} />, href: "#" },
+              { icon: <FaLinkedinIn size={20} />, href: "#" },
+              { icon: <FaXTwitter size={20} />, href: "#" },
+            ].map(({ icon, href }, i) => (
+              <a
+                key={i}
+                href={href}
+                className="hover:opacity-80 transition-opacity duration-200 p-2 hover:bg-black/50 hover:rounded-full"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="flex justify-center mb-6 sm:mb-10">
+      {/* Scroll Indicator */}
+      <div className="flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
         <ScrollIndicator />
       </div>
     </section>

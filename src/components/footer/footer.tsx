@@ -3,14 +3,27 @@ import { Button } from "../ui/button";
 import { MailIcon, PhoneCallIcon, Instagram } from "lucide-react";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Image from "next/image";
+import { BluePatternLeft, BluePatternRight } from "@/assets/img";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary-600 text-neutral-100 w-full rounded-t-[12px] px-6 sm:px-10 md:px-16 lg:px-20 py-10 md:py-16">
-      <div className="flex flex-col lg:flex-row gap-10 md:gap-20 justify">
+    <footer className="relative bg-primary-600 text-neutral-100 w-full rounded-t-[12px] px-6 sm:px-10 md:px-16 lg:px-20 py-10 md:py-25 overflow-hidden">
+      <Image
+        src={BluePatternLeft}
+        alt="background pattern left"
+        className="absolute left-0 bottom-0 h-[150px] w-[120px] sm:h-[200px] sm:w-[200px] md:h-[250px] md:w-[280px] lg:h-[309.96px] lg:w-[350px] object-cover opacity-90"
+      />
+      <Image
+        src={BluePatternRight}
+        alt="background pattern right"
+        className="absolute right-0 top-0 h-[150px] w-[120px] sm:h-[200px] sm:w-[200px] md:h-[250px] md:w-[280px] lg:h-[309.96px] lg:w-[350px] object-cover opacity-90"
+      />
+
+      <div className="relative flex flex-col lg:flex-row gap-10 md:gap-20 justify">
         <div className="flex flex-col gap-4">
           <FooterLogo />
-          <p className="text-sm md:text-base font-font-general">
+          <p className="text-sm font-font-general">
             Copyright © {new Date().getFullYear()} Livewell Festival
           </p>
         </div>
