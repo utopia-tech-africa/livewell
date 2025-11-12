@@ -30,7 +30,7 @@ export const AccordionItems = async () => {
   const faqs = faqSection?.faqs ?? [];
 
   return (
-    <section className="max-w-7xl rounded-[12px] p-7 justify-between bg-primary-600 grid md:grid-cols-2 gap-6">
+    <section className="rounded-[12px] p-7 justify-between bg-primary-600 grid md:grid-cols-2 gap-6">
       <div className="md:max-w-[365px]">
         <h2 className="text-[38px] md:text-[48px] font-bold mb-4 leading-[120%] text-neutral-100 font-satoshi">
           Your Questions Answered{" "}
