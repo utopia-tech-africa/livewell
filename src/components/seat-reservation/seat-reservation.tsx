@@ -6,11 +6,11 @@ import { BluePatternLeft, BluePatternRight } from "@/assets/img";
 export const SeatReservation = () => {
   return (
     <ComponentLayout>
-      <div className="relative flex flex-col items-center justify-center rounded-[12px] bg-[#006A7B] overflow-hidden px-6 py-20 my-[90px] md:my-[100px] lg:my-[120px] text-center text-white">
+      <div className="relative flex flex-col items-center justify-center rounded-[12px] bg-primary-600 overflow-hidden px-6 py-20 my-[90px] md:my-[100px] lg:my-[120px] text-center text-white">
         <Image
           src={BluePatternLeft}
           alt="background pattern left"
-          className="absolute left-0 bottom-0 h-[150px] w-[120px] sm:h-[200px] sm:w-[200px] md:h-[250px] md:w-[280px] lg:h-[309.96px] lg:w-[350px] object-cover opacity-90"
+          className="absolute left-0 bottom-0 h-[150px] w-[120px] md:h-[150px] md:w-[180px] lg:h-[209.96px] lg:w-[200px] object-cover opacity-90"
         />
         <Image
           src={BluePatternRight}
