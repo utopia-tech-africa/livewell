@@ -35,7 +35,9 @@ export const Countdown = () => {
     const fetchDate = async () => {
       const data = (await fetchCountdown()) as { eventDate: string }[];
       if (data && data.length > 0 && data[0].eventDate) {
-        setEventDate(data[0].eventDate);
+        const event = data[0].eventDate;
+        setEventDate(event);
+        setTimeLeft(calculateTimeLeft(event));
       }
     };
     fetchDate();
