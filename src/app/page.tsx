@@ -14,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SponsorsBanner />
+
       <About />
       <Events />
       <div className="relative">
