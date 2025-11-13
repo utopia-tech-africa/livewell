@@ -62,13 +62,15 @@ export const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-2">
-            <Image
-              src={LivewellLogo}
-              height={50}
-              width={50}
-              alt="Livewell Logo"
-              className="h-[35px] w-[55px] object-cover"
-            />
+            <a href="#">
+              <Image
+                src={LivewellLogo}
+                height={50}
+                width={50}
+                alt="Livewell Logo"
+                className="h-[35px] w-[55px] object-cover"
+              />
+            </a>
           </div>
 
           {/* desktop button */}
