@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { LivewellLogo } from "@/assets/img";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 type NavItem = {
   label: string;
@@ -62,7 +63,7 @@ export const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-2">
-            <a href="#">
+            <Link href="/">
               <Image
                 src={LivewellLogo}
                 height={50}
@@ -70,14 +71,16 @@ export const Navbar = () => {
                 alt="Livewell Logo"
                 className="h-[35px] w-[55px] object-cover"
               />
-            </a>
+            </Link>
           </div>
 
           {/* desktop button */}
           <div className="hidden md:block">
-            <Button className="bg-primary-600 w-[252px] text-white px-6">
-              Reserve Your Spot
-            </Button>
+            <Link href="/reserve-seat">
+              <Button className="bg-primary-600 w-[252px] text-white px-6">
+                Reserve Your Spot
+              </Button>
+            </Link>
           </div>
 
           {/* mobile menu toggle */}
@@ -106,9 +109,11 @@ export const Navbar = () => {
                 </li>
               ))}
               <li>
-                <Button className="w-full bg-primary-600 text-white">
-                  Reserve Your Spot
-                </Button>
+                <Link href="/reserve-seat">
+                  <Button className="w-full bg-primary-600 text-white">
+                    Reserve Your Spot
+                  </Button>
+                </Link>
               </li>
             </ul>
           </nav>

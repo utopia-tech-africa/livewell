@@ -7,7 +7,7 @@ export * from "./navbar";
 export * from "./footer";
 export * from "./news";
 export * from "./hero";
-export * from "./seat-reservation";
+export * from "./seat-reservation-banner";
 export * from "./about";
 export * from "./sponsors-banner";
 export * from "./volunteer";

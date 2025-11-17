@@ -33,9 +33,11 @@ export const Hero = () => {
             A movement to inspire healthier living and build stronger
             communities.
           </p>
-          <Button className="bg-primary-500 text-sm sm:text-base md:text-lg mt-2 sm:mt-4 md:mt-6">
-            Join the movement
-          </Button>
+          <a href="#volunteer">
+            <Button className="bg-primary-500 text-sm sm:text-base md:text-lg mt-2 sm:mt-4 md:mt-6">
+              Join the movement
+            </Button>
+          </a>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { ComponentLayout } from "../component-layout";
 import { BluePatternLeft, BluePatternRight } from "@/assets/img";
+import Link from "next/link";
 
 export const SeatReservationBanner = () => {
   return (
@@ -28,10 +29,11 @@ export const SeatReservationBanner = () => {
             just a vibrant community learning, moving, and celebrating healthy
             living.
           </p>
-
-          <Button className="bg-neutral-100 text-primary-600 font-extrabold w-[180px] md:w-[262px] text-sm md:text-lg">
-            Reserve your spot
-          </Button>
+          <Link href="/reserve-seat">
+            <Button className="bg-neutral-100 text-primary-600 font-extrabold w-[180px] md:w-[262px] text-sm md:text-lg">
+              Reserve your spot
+            </Button>
+          </Link>
         </div>
       </div>
     </ComponentLayout>
