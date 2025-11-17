@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { ComponentLayout } from "../component-layout";
 import { BluePatternLeft, BluePatternRight } from "@/assets/img";
 
-export const SeatReservation = () => {
+export const SeatReservationBanner = () => {
   return (
     <ComponentLayout>
       <div className="relative flex flex-col items-center justify-center rounded-[12px] bg-primary-600 overflow-hidden px-6 py-20 my-[90px] md:my-[100px] lg:my-[120px] text-center text-white">
