@@ -1,1 +1,1 @@
-export * from "./seat-reservation";
+export * from "./seat-reservation-banner";

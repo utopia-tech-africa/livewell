@@ -13,9 +13,8 @@ import PluginLogo from "./plugin-logo.png";
 import BouquetLogo from "./bouquet-logo.png";
 import SocialGoodLogo from "./social-good.png";
 import BeyondLogo from "./beyond-logo.png";
-import JamesonLogo from "./jameson-logo.png";
-import BallantinesLogo from "./ballantines-logo.png";
 import VolunteerFormImg from "./volunteer-form-img.webp";
+import SeatReservationImg from "./seat-reservation-img.webp";
 
 export {
   HeroImg,
@@ -33,7 +32,6 @@ export {
   BouquetLogo,
   SocialGoodLogo,
   BeyondLogo,
-  JamesonLogo,
-  BallantinesLogo,
   VolunteerFormImg,
+  SeatReservationImg,
 };
