@@ -55,12 +55,12 @@ export const Footer = () => {
           <span className="text-lg font-bold">Connect with us</span>
           <div className="flex items-center gap-2">
             <PhoneCallIcon className="w-5 h-5" />
-            <span>+31 687 062 84</span>
+            <span>+233 54 945 3049</span>
           </div>
 
           <div className="flex items-center gap-2">
             <MailIcon className="w-5 h-5" />
-            <span>livewelllifefestival@gmail.com</span>
+            <span>info@livewellfestival.life </span>
           </div>
 
           <div className="flex items-center gap-4">
