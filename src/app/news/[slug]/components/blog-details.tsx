@@ -20,7 +20,7 @@ export const BlogDetails = async ({ slug }: { slug: string }) => {
 
   return (
     <div className="relative">
-      <Heading className="absolute z-10 left-1/2 -translate-x-1/2 -top-11 font-satoshi bg-secondary-500 text-neutral-100 text-[20px] sm:text-[28px] font-bold">
+      <Heading className="absolute z-10 left-1/2 -translate-x-1/2 -top-7 md:-top-11 font-satoshi bg-secondary-500 text-neutral-100 text-[20px] sm:text-[28px] font-bold">
         Blog DETAILS
       </Heading>
       <ComponentLayout>
