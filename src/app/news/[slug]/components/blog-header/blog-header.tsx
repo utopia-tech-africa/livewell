@@ -27,7 +27,7 @@ export const BlogHeader = ({
         <p className="text-sm tracking-normal font-satoshi text-neutral-800 leading-[21px]">
           {formatPublishedDate(publishedDate as string)}
         </p>
-        <p className="font-extrabold text-neutral-1000 md:text-base text-xs leading-4 uppercase">
+        <p className="font-extrabold text-neutral-1000 text-[20px] md:text-[24px] leading-6 uppercase">
           {title?.toUpperCase()}
         </p>
       </div>

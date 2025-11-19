@@ -7,7 +7,7 @@ export const Volunteer = () => {
   return (
     <div id="volunteer">
       <ComponentLayout className="w-full mt-[90px] md:mt-[100px] lg:mt-[120px] rounded-2xl overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-11 items-stretch">
           <div className="relative h-[280px] md:h-auto min-h-90">
             <Image
               src={VolunteerFormImg}
