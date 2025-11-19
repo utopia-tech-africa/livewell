@@ -1,7 +1,7 @@
 import { WhitePattern } from "@/assets/img";
 import {
   About,
-  Blogs,
+  // Blogs,
   SeatReservationBanner,
   SponsorsBanner,
   Volunteer,
@@ -9,7 +9,7 @@ import {
 import { Events } from "@/components/events";
 import { Faq } from "@/components/faq/faq";
 import { Hero } from "@/components/hero";
-// import { News } from "@/components/news";
+import { News } from "@/components/news";
 import { SocialWall } from "@/components/social-wall";
 import Image from "next/image";
 
@@ -31,10 +31,8 @@ export default function Home() {
       </div>
       <SeatReservationBanner />
       <Faq />
-
-      {/* uncomment when client starts using sanity */}
-      {/* <News /> */}
-      <Blogs />
+      <News />
+      {/* <Blogs /> */}
     </div>
   );
 }

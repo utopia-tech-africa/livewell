@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { NEWS_ARTICLES_QUERYResult } from "../../../sanity.types";
 import { formatPublishedDate } from "@/lib/utils";
+import Link from "next/link";
 
 type NewsCardProps = NEWS_ARTICLES_QUERYResult[0];
 
@@ -10,7 +11,9 @@ export const NewsCard = ({
   slug,
   publishedDate,
 }: NewsCardProps) => {
-  return (
+  const slugPath = typeof slug === "string" ? slug : slug?.current;
+
+  const Card = (
     <div className="flex flex-col min-w-[302px] gap-6 bg-white overflow-hidden group">
       <div className="w-full h-[222px] overflow-hidden rounded-[12px]">
         <Image
@@ -31,4 +34,8 @@ export const NewsCard = ({
       </div>
     </div>
   );
+
+  if (!slugPath) return Card;
+
+  return <Link href={`/news/${encodeURIComponent(slugPath)}`}>{Card}</Link>;
 };

@@ -15,6 +15,14 @@ export default defineType({
       validation: (Rule) => Rule.required().max(120),
     }),
     defineField({
+      name: "body",
+      title: "Body",
+      type: "array",
+      of: [{ type: "block" }],
+      description: "Full content of the blog. Supports rich text formatting.",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -30,14 +38,6 @@ export default defineType({
       options: { hotspot: true },
       validation: (Rule) => Rule.required(),
     }),
-    // defineField({
-    //   name: "body",
-    //   title: "Body",
-    //   type: "array",
-    //   of: [{ type: "block" }],
-    //   description: "Full content of the blog. Supports rich text formatting.",
-    //   validation: (Rule) => Rule.required(),
-    // }),
     defineField({
       name: "publishedDate",
       title: "Published Date",
