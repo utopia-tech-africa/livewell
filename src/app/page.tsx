@@ -1,6 +1,7 @@
 import { WhitePattern } from "@/assets/img";
 import {
   About,
+  // Blogs,
   SeatReservationBanner,
   SponsorsBanner,
   Volunteer,
@@ -31,6 +32,7 @@ export default function Home() {
       <SeatReservationBanner />
       <Faq />
       <News />
+      {/* <Blogs /> */}
     </div>
   );
 }

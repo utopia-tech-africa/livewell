@@ -12,3 +12,4 @@ export * from "./about";
 export * from "./sponsors-banner";
 export * from "./volunteer";
 export * from "./countdown";
+export * from "./blogs";
