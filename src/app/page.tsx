@@ -1,17 +1,21 @@
 import { WhitePattern } from "@/assets/img";
-import { About, Footer, Navbar, SponsorsBanner, Volunteer } from "@/components";
+import {
+  About,
+  // Blogs,
+  SeatReservationBanner,
+  SponsorsBanner,
+  Volunteer,
+} from "@/components";
 import { Events } from "@/components/events";
 import { Faq } from "@/components/faq/faq";
 import { Hero } from "@/components/hero";
 import { News } from "@/components/news";
-import { SeatReservation } from "@/components/seat-reservation";
 import { SocialWall } from "@/components/social-wall";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full min-h-dvh">
-      <Navbar />
+    <div className="flex flex-col w-full min-h-dvh">
       <Hero />
       <SponsorsBanner />
       <About />
@@ -25,10 +29,10 @@ export default function Home() {
         <SocialWall />
         <Volunteer />
       </div>
-      <SeatReservation />
+      <SeatReservationBanner />
       <Faq />
       <News />
-      <Footer />
-    </main>
+      {/* <Blogs /> */}
+    </div>
   );
 }

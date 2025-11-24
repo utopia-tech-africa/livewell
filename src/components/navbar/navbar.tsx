@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { LivewellLogo } from "@/assets/img";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 type NavItem = {
   label: string;
@@ -43,7 +44,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="bg-neutral-100 fixed w-full top-0 z-50 shadow-sm">
+      <header className="bg-neutral-100 scroll-smooth fixed w-full top-0 z-50 shadow-sm">
         <div className="flex justify-between items-center py-3 px-6 md:px-20">
           <ul className="hidden md:flex gap-8">
             {navList.map((item, index) => (
@@ -62,20 +63,24 @@ export const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-2">
-            <Image
-              src={LivewellLogo}
-              height={50}
-              width={50}
-              alt="Livewell Logo"
-              className="h-[35px] w-[55px] object-cover"
-            />
+            <Link href="/">
+              <Image
+                src={LivewellLogo}
+                height={50}
+                width={50}
+                alt="Livewell Logo"
+                className="h-[35px] w-[55px] object-cover"
+              />
+            </Link>
           </div>
 
           {/* desktop button */}
           <div className="hidden md:block">
-            <Button className="bg-primary-600 w-[252px] text-white px-6">
-              Reserve Your Spot
-            </Button>
+            <Link href="/reserve-seat">
+              <Button className="bg-primary-600 w-[252px] text-white px-6">
+                Reserve Your Spot
+              </Button>
+            </Link>
           </div>
 
           {/* mobile menu toggle */}
@@ -104,9 +109,11 @@ export const Navbar = () => {
                 </li>
               ))}
               <li>
-                <Button className="w-full bg-primary-600 text-white">
-                  Reserve Your Spot
-                </Button>
+                <Link href="/reserve-seat">
+                  <Button className="w-full bg-primary-600 text-white">
+                    Reserve Your Spot
+                  </Button>
+                </Link>
               </li>
             </ul>
           </nav>

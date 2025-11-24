@@ -1,10 +1,8 @@
 import {
-  BallantinesLogo,
   BallGbeeLogo,
   BeyondLogo,
   BouquetLogo,
   GlassHouseLogo,
-  JamesonLogo,
   PluginLogo,
   SocialGoodLogo,
   SponsoredBy,
@@ -20,8 +18,6 @@ const bannerItems = [
   BouquetLogo,
   SocialGoodLogo,
   BeyondLogo,
-  JamesonLogo,
-  BallantinesLogo,
 ];
 
 export const SponsorsBanner = () => {

@@ -199,6 +199,11 @@ export type SanityAssetSourceData = {
 
 export type AllSanitySchemaTypes = SocialWall | News | Event | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./src/lib/queries/countdown-queries.ts
+// Variable: COUNTDOWN_QUERY
+// Query: *[_type == "countdown"] {    title,      eventDate,    }
+export type COUNTDOWN_QUERYResult = Array<never>;
+
 // Source: ./src/lib/queries/event-queries.ts
 // Variable: EVENTS_QUERY
 // Query: *[_type == "event"] | order(publishDate desc){        _id,        name,        image{        asset->{        _id,        url}        },        description,    }
@@ -234,6 +239,21 @@ export type NEWS_ARTICLES_QUERYResult = Array<{
   slug: Slug | null;
   publishedDate: string | null;
 }>;
+// Variable: SINGLE_NEWS_ARTICLE_QUERY
+// Query: *[_type == "news"] | order(publishDate desc){    _id,    body,    title,    mainImage{    asset->{    _id,    url    }    },      slug,      publishedDate,    }
+export type SINGLE_NEWS_ARTICLE_QUERYResult = Array<{
+  _id: string;
+  body: null;
+  title: string | null;
+  mainImage: {
+    asset: {
+      _id: string;
+      url: string | null;
+    } | null;
+  } | null;
+  slug: Slug | null;
+  publishedDate: string | null;
+}>;
 
 // Source: ./src/lib/queries/social-wall-queries.ts
 // Variable: SOCIAL_WALL_QUERY
@@ -250,9 +270,11 @@ export type SOCIAL_WALL_QUERYResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
+    "*[_type == \"countdown\"] {\n    title,\n      eventDate,\n    }": COUNTDOWN_QUERYResult;
     "*[_type == \"event\"] | order(publishDate desc){\n        _id,\n        name,\n        image{\n        asset->{\n        _id,\n        url}\n        },\n        description,\n    }": EVENTS_QUERYResult;
     "*[_type == \"faqSection\"] | order(publishDate desc) {\n  _id,\n  title,\n  faqs[]{\n    question,\n    answer\n  }\n}\n\n": FAQs_QUERYResult;
     "*[_type == \"news\"] | order(publishDate desc){\n    _id,\n    title,\n    mainImage{\n    asset->{\n    _id,\n    url\n    }\n    },\n      slug,\n      publishedDate,\n    }": NEWS_ARTICLES_QUERYResult;
+    "*[_type == \"news\"] | order(publishDate desc){\n    _id,\n    body,\n    title,\n    mainImage{\n    asset->{\n    _id,\n    url\n    }\n    },\n      slug,\n      publishedDate,\n    }": SINGLE_NEWS_ARTICLE_QUERYResult;
     "*[_type == \"socialWall\"]{\n  images[]{\n    asset->{\n      url\n    }\n  }\n}\n": SOCIAL_WALL_QUERYResult;
   }
 }

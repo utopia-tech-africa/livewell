@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { ScrollIndicator } from "../scroll-indicator";
 import { FaXTwitter } from "react-icons/fa6";
+import { Countdown } from "../countdown";
 
 export const Hero = () => {
   return (
@@ -19,39 +20,8 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/60 to-black/80" />
       </div>
 
-      {/* Mobile Countdown */}
-      <div className="sm:hidden w-full pt-32 pb-8">
-        <div className="flex flex-col items-center gap-3 text-center">
-          <span className="text-sm font-semibold tracking-widest italic">
-            Countdown
-          </span>
-          <div className="flex gap-3 font-extrabold font-satoshi text-2xl leading-none">
-            <span>50</span>
-            <span>:</span>
-            <span>12</span>
-            <span>:</span>
-            <span>35</span>
-            <span>:</span>
-            <span>12</span>
-          </div>
-        </div>
-      </div>
-
       {/* Desktop Countdown */}
-      <div className="hidden sm:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 flex-col items-center gap-3 text-center">
-        <span className="text-sm md:text-base font-semibold tracking-widest italic">
-          Countdown
-        </span>
-        <div className="flex flex-col gap-2 font-extrabold font-satoshi text-2xl md:text-3xl lg:text-[41px] leading-none">
-          <span>50</span>
-          <span>:</span>
-          <span>12</span>
-          <span>:</span>
-          <span>35</span>
-          <span>:</span>
-          <span>12</span>
-        </div>
-      </div>
+      <Countdown />
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-12 flex-1 py-8 sm:py-12">
@@ -63,9 +33,11 @@ export const Hero = () => {
             A movement to inspire healthier living and build stronger
             communities.
           </p>
-          <Button className="bg-primary-500 hidden md:block text-sm sm:text-base md:text-lg mt-2 sm:mt-4 md:mt-6">
-            Join the movement
-          </Button>
+          <a href="#volunteer">
+            <Button className="bg-primary-500 text-sm sm:text-base md:text-lg mt-2 sm:mt-4 md:mt-6">
+              Join the movement
+            </Button>
+          </a>
         </div>
       </div>
 

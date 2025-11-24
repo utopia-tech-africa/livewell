@@ -30,12 +30,12 @@ export const AccordionItems = async () => {
   const faqs = faqSection?.faqs ?? [];
 
   return (
-    <section className="rounded-[12px] p-7 justify-between bg-primary-600 mx-auto grid md:grid-cols-2 gap-6">
-      <div>
-        <h2 className="text-[38px] md:text-[48px] font-bold mb-4 leading-[120%] text-neutral-100 font-satoshi">
+    <section className="rounded-[12px] p-7 justify-between bg-primary-600 grid md:grid-cols-2 gap-6">
+      <div className="">
+        <h2 className="text-[38px] md:text-[48px] xl:text-[55px] text-center md:text-start font-bold mb-4 leading-[120%] text-neutral-100 font-satoshi">
           Your Questions Answered{" "}
         </h2>
-        <p className="text-neutral-100 text-sm font-satoshi">
+        <p className="text-neutral-100 text-sm md:text-base xl:text-lg mb-3 md:mb-0 font-satoshi">
           Have questions about our fitness festival? We have the answers!
           Discover all you need to know about earning points, tracking your
           progress, and redeeming exciting rewards in our loyalty program.

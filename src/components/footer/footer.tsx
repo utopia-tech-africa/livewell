@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 import { BluePatternLeft, BluePatternRight } from "@/assets/img";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -44,23 +45,30 @@ export const Footer = () => {
 
         <div className="order-3 md:order-4 flex flex-col gap-2 font-general text-neutral-100 text-base md:text-lg">
           <span className="font-bold">Site Map</span>
-          <span>Buy tickets</span>
-          <span>Schedule</span>
-          <span>Speakers</span>
-          <span>Media</span>
-          <span>Blog</span>
+          <Link href="/reserve-seat" className="hover:text-blue-200">
+            <span>Buy tickets</span>
+          </Link>
+          <Link href="/" className="hover:text-blue-200">
+            <span>Schedule</span>
+          </Link>
+          <Link className="hover:text-blue-200" href="/">
+            <span>Media</span>
+          </Link>
+          <Link className="hover:text-blue-200" href="/">
+            <span>Blog</span>
+          </Link>
         </div>
 
         <div className="order-4 md:order-3 flex flex-col gap-5 text-neutral-100 font-general">
           <span className="text-lg font-bold">Connect with us</span>
           <div className="flex items-center gap-2">
             <PhoneCallIcon className="w-5 h-5" />
-            <span>+31 687 062 84</span>
+            <span>+233 54 945 3049</span>
           </div>
 
           <div className="flex items-center gap-2">
             <MailIcon className="w-5 h-5" />
-            <span>livewelllifefestival@gmail.com</span>
+            <span>info@livewellfestival.life </span>
           </div>
 
           <div className="flex items-center gap-4">
