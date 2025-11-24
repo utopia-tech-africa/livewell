@@ -49,7 +49,7 @@ export async function POST(request: Request) {
             </h3>
 
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
-              <strong>Date:</strong> Friday, 19th December 2025
+              <strong>Date:</strong> January 2026
             </p>
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
               <strong>Time:</strong> 09:00 AM
