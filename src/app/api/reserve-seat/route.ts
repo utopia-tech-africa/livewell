@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request: Request) {
+async function POST(request: Request) {
   const { name, email, phone } = await request.json();
 
   const firstName = name.split(" ")[0];
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
   <div>You're In! Livewell Festival – Registration Confirmed</div>
 
-  <body style="background-color: #00637A; margin: 0; padding: 0; font-family: Arial, sans-serif;">
+  <main style="background-color: #00637A; margin: 0; padding: 0; font-family: Arial, sans-serif;">
     <div style="width: 100%; background-color: #f4f6f8; padding: 40px 0;">
       <div style="max-width: 620px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
 
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
 
       </div>
     </div>
-  </body>
+  </main>
 </section>`,
     });
 
