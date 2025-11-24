@@ -1,11 +1,10 @@
-import EmailTemplate from "@/components/email-template";
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 // import { Html, Head, Preview } from "@react-email/components";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-async function POST(request: Request) {
+export async function POST(request: Request) {
   const { name, email, phone } = await request.json();
 
   const firstName = name.split(" ")[0];
