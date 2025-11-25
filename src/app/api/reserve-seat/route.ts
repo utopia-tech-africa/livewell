@@ -40,7 +40,7 @@ export async function POST(request: Request) {
           <p style="color: #4a4a4a; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
             Your registration for the <strong>Livewell Festival</strong> has
             been successfully received. We’re excited to have you join us at
-            this year’s event filled with wellness, community, and fun!
+         year’s event filled with wellness, community, and fun!
           </p>
 
           <div style="border-left: 4px solid #1e88e5; background-color: #f9fbff; padding: 20px; border-radius: 8px; margin-bottom: 32px;">

@@ -13,12 +13,12 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: "Livewell Festival <info@livewellfestival.life>",
       to: email,
-      subject: `Livewell Festival – ${role} Volunter Registration Confirmed`,
+      subject: `Livewell Festival – ${role} Volunteer Registration Confirmed`,
       //   react: EmailTemplate({ firstName }),
       html: `<section>
   <header></header>
 
-  <div>You're In! Livewell Festival – ${role} Volunteer Registration Confirmed</div>
+  <div>Livewell Festival – ${role} Volunteer Registration Confirmed</div>
 
   <main style="background-color: #00637A; margin: 0; padding: 0; font-family: Arial, sans-serif;">
     <div style="width: 100%; background-color: #f4f6f8; padding: 40px 0;">
@@ -69,9 +69,6 @@ export async function POST(request: Request) {
              <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
              We look forward to having you on board!
             </p>
-          <p style="color: #4a4a4a; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
-            If you have any questions before the event, feel free to reach out.
-          </p>
 
           <p style="color: #4a4a4a; font-size: 15px; line-height: 1.6; margin-bottom: 24px; margin-top: 32px;">
             Best regards, <br />
