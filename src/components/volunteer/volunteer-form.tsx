@@ -15,6 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Full name is required"),
@@ -24,6 +25,12 @@ const formSchema = z.object({
 });
 
 export const VolunteerForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,8 +41,40 @@ export const VolunteerForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Submitted data:", values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    try {
+      const res = await fetch("/api/volunteer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to submit volunteer form");
+      }
+
+      await res.json();
+      setSubmitMessage({
+        type: "success",
+        text: "Form submitted successfully! Check your email for confirmation.",
+      });
+      form.reset();
+    } catch (error) {
+      setSubmitMessage({
+        type: "error",
+        text:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -43,6 +82,7 @@ export const VolunteerForm = () => {
       <h2 className="leading-[39px] text-center md:text-start font-bold text-3xl font-satoshi text-primary-700 mb-2">
         Together, we make change possible.
       </h2>
+
       <p className="text-neutral-900 mb-8 text-base font-semibold sm:text-base leading-6">
         By volunteering your voice, time, or resources, you can drive meaningful
         change. Together, we can strengthen our communities, share inspiring
@@ -58,6 +98,7 @@ export const VolunteerForm = () => {
           <Input
             placeholder="John Doe"
             {...form.register("name")}
+            disabled={isSubmitting}
             className="rounded-full p-6 mt-2 placeholder:text-sm placeholder:leading-3.5 placeholder:font-medium placeholder:text-neutral-500 font-general"
           />
           {form.formState.errors.name && (
@@ -67,7 +108,7 @@ export const VolunteerForm = () => {
           )}
         </div>
 
-        {/* Volunteer Role Dropdown */}
+        {/* Role Dropdown */}
         <div>
           <label className="block text-sm font-medium text-neutral-1000 font-general">
             Volunteer Role <span className="text-red-500">*</span>
@@ -77,8 +118,12 @@ export const VolunteerForm = () => {
             name="role"
             control={form.control}
             render={({ field }) => (
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <SelectTrigger className="rounded-full w-full p-6 mt-2 font-general">
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                disabled={isSubmitting}
+              >
+                <SelectTrigger className="rounded-full w-full p-6 mt-2 font-general disabled:opacity-50">
                   <SelectValue placeholder="Select a role" />
                 </SelectTrigger>
                 <SelectContent>
@@ -117,6 +162,7 @@ export const VolunteerForm = () => {
               type="email"
               placeholder="example@email.com"
               {...form.register("email")}
+              disabled={isSubmitting}
               className="rounded-full p-6 mt-2 placeholder:text-sm placeholder:leading-3.5 placeholder:font-medium placeholder:text-neutral-500 font-general"
             />
             {form.formState.errors.email && (
@@ -140,6 +186,7 @@ export const VolunteerForm = () => {
                     defaultCountry="GH"
                     value={field.value}
                     onChange={field.onChange}
+                    disabled={isSubmitting}
                     className="phone-input w-full border-none outline-none bg-transparent rounded-full placeholder:text-sm placeholder:font-medium placeholder:text-neutral-500 font-general"
                   />
                 )}
@@ -153,12 +200,25 @@ export const VolunteerForm = () => {
           </div>
         </div>
 
+        {submitMessage && (
+          <div
+            className={`p-4 rounded-full text-sm font-medium ${
+              submitMessage.type === "success"
+                ? "bg-green-100 text-green-800"
+                : "bg-red-100 text-red-800"
+            }`}
+          >
+            {submitMessage.text}
+          </div>
+        )}
+
         {/* Submit */}
         <Button
           type="submit"
-          className="w-full shadow-none hover:shadow-none border border-neutral-500 text-primary-600 bg-neutral-100"
+          disabled={isSubmitting}
+          className="w-full shadow-none hover:shadow-none border border-neutral-500 text-primary-600 bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Submit
+          {isSubmitting ? "Submitting..." : "Submit"}
         </Button>
       </form>
     </div>
