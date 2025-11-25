@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
-  const { name, email, phone } = await request.json();
+  const { name, email, phone, role } = await request.json();
 
   const firstName = name.split(" ")[0];
 
@@ -13,19 +13,19 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: "Livewell Festival <info@livewellfestival.life>",
       to: email,
-      subject: "You're In! Livewell Festival - Registration Confirmed",
+      subject: `Livewell Festival – ${role} Volunter Registration Confirmed`,
       //   react: EmailTemplate({ firstName }),
       html: `<section>
   <header></header>
 
-  <div>You're In! Livewell Festival – Registration Confirmed</div>
+  <div>You're In! Livewell Festival – ${role} Volunteer Registration Confirmed</div>
 
   <main style="background-color: #00637A; margin: 0; padding: 0; font-family: Arial, sans-serif;">
     <div style="width: 100%; background-color: #f4f6f8; padding: 40px 0;">
       <div style="max-width: 620px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
 
         <div style="background-color: #1e88e5; color: white; text-align: center; padding: 32px 24px;">
-          <h1 style="font-size: 24px; font-weight: bold; margin: 0;">🎉 Your Registration Is Confirmed!</h1>
+          <h1 style="font-size: 24px; font-weight: bold; margin: 0;">🎉 Your Registration as a ${role} Volunteer Has Been Confirmed!</h1>
           <p style="font-size: 13px; opacity: 0.9; margin-top: 6px;">
             Welcome to the Livewell Festival, ${firstName}
           </p>
@@ -38,9 +38,7 @@ export async function POST(request: Request) {
           </p>
 
           <p style="color: #4a4a4a; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
-            Your registration for the <strong>Livewell Festival</strong> has
-            been successfully received. We’re excited to have you join us at
-            this year’s event filled with wellness, community, and fun!
+           Thank you for signing up as a ${role} volunteer at the Livewell Festival! We’re excited to have you join our team as we work together to make the event impactful, fun, and memorable for everyone.
           </p>
 
           <div style="border-left: 4px solid #1e88e5; background-color: #f9fbff; padding: 20px; border-radius: 8px; margin-bottom: 32px;">
@@ -54,15 +52,23 @@ export async function POST(request: Request) {
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
               <strong>Time:</strong> 09:00 AM
             </p>
+
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
               <strong>Location:</strong> Accra, Ghana
             </p>
           </div>
 
-          <p style="color: #4a4a4a; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
-            <span style="color: #1e88e5; font-weight: 600;">Entry:</span> Show this email at the gate for access.
-          </p>
+            <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
+              More specific details about your role as a ${role} volunteer will be shared with you.
+            </p>
 
+            <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
+             If you have any questions before then, feel free to reach out to us.
+            </p>
+
+             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
+             We look forward to having you on board!
+            </p>
           <p style="color: #4a4a4a; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
             If you have any questions before the event, feel free to reach out.
           </p>
