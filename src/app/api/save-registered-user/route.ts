@@ -14,16 +14,16 @@ export async function POST(request: Request) {
 
     return NextResponse.json(
       {
-        message: "Saved registered user successfully",
+        message: "Saved registered user successfully!",
         registeredUser: newRegisteredUser,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     console.error("Error saving registered user to db :", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : String(error) },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
