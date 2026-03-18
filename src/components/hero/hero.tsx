@@ -48,13 +48,18 @@ export const Hero = () => {
           <div className="flex flex-col gap-4 md:gap-5">
             {[
               { icon: <FaFacebookF size={20} />, href: "#" },
-              { icon: <FaInstagram size={20} />, href: "#" },
+              {
+                icon: <FaInstagram size={20} />,
+                href: "https://www.instagram.com/livewell_festival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+              },
               { icon: <FaLinkedinIn size={20} />, href: "#" },
               { icon: <FaXTwitter size={20} />, href: "#" },
             ].map(({ icon, href }, i) => (
               <a
                 key={i}
                 href={href}
+                rel="noreferrer"
+                target="_blank"
                 className="hover:opacity-80 transition-opacity duration-200 p-2 hover:bg-black/50 hover:rounded-full"
               >
                 {icon}
