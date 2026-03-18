@@ -47,14 +47,14 @@ export async function POST(request: Request) {
             </h3>
 
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
-              <strong>Date:</strong> January 2026
+              <strong>Date:</strong> April 4, 2026
             </p>
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
-              <strong>Time:</strong> 09:00 AM
+              <strong>Time:</strong> 07:00 AM
             </p>
 
             <p style="color: #4a4a4a; font-size: 14px; margin-bottom: 4px;">
-              <strong>Location:</strong> Accra, Ghana
+              <strong>Location:</strong> University of Ghana Pool Side
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export async function POST(request: Request) {
     console.error("Unexpected error", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : error },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
