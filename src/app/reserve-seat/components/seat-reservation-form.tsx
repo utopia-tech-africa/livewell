@@ -36,19 +36,46 @@ export const SeatReservationForm = () => {
     setSubmitMessage(null);
 
     try {
-      const response = await fetch("/api/reserve-seat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
+      //////////////////////////////////
+      const [sendSeatEmailResponse, saveRegisteredUserResponse] =
+        await Promise.all([
+          fetch("/api/reserve-seat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(values),
+          }),
+          fetch("/api/save-registered-user", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(values),
+          }),
+        ]);
 
-      if (!response.ok) {
+      if (!sendSeatEmailResponse.ok)
         throw new Error("Failed to submit reservation");
-      }
+      if (!saveRegisteredUserResponse.ok)
+        throw new Error("Failed to save registered user");
 
-      await response.json();
+      await Promise.all([
+        sendSeatEmailResponse.json(),
+        saveRegisteredUserResponse.json(),
+      ]);
+      /////////////////////////////////
+      // const response = await fetch("/api/reserve-seat", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(values),
+      // });
+
+      // if (!response.ok) {
+      //   throw new Error("Failed to submit reservation");
+      // }
+
+      // await response.json();
+
+      /////////////////////////////////////////
       setSubmitMessage({
         type: "success",
         text: "Reservation submitted successfully! Check your email for confirmation.",

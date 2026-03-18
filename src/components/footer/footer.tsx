@@ -151,7 +151,15 @@ export const Footer = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <Instagram className="w-6 h-6" />
+            <a
+              href="https://www.instagram.com/livewell_festival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noreferrer"
+              className="hover:bg-black/50 hover:rounded-full"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
+
             <FaFacebook className="w-6 h-6" />
             <FaXTwitter className="w-6 h-6" />
           </div>

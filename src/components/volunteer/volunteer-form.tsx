@@ -46,19 +46,46 @@ export const VolunteerForm = () => {
     setSubmitMessage(null);
 
     try {
-      const res = await fetch("/api/volunteer", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
+      //////////////////////////////
 
-      if (!res.ok) {
+      const [volunteerResponse, saveVolunteerResponse] = await Promise.all([
+        fetch("/api/volunteer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }),
+        fetch("/api/save-volunteer", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }),
+      ]);
+
+      if (!volunteerResponse.ok)
         throw new Error("Failed to submit volunteer form");
-      }
+      if (!saveVolunteerResponse.ok)
+        throw new Error("Failed to save volunteer to db");
 
-      await res.json();
+      await Promise.all([
+        volunteerResponse.json(),
+        saveVolunteerResponse.json(),
+      ]);
+
+      /////////////////////////////
+      // const res = await fetch("/api/volunteer", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(values),
+      // });
+
+      // if (!res.ok) {
+      //   throw new Error("Failed to submit volunteer form");
+      // }
+
+      // await res.json();
+      /////////////////////////////////////////////
       setSubmitMessage({
         type: "success",
         text: "Form submitted successfully! Check your email for confirmation.",
