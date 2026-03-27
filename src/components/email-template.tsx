@@ -41,13 +41,13 @@ const EmailTemplate = ({ firstName }: { firstName: string }) => {
                 </h3>
 
                 <p className="text-gray-700 text-sm mb-1">
-                  <strong>Date:</strong> Friday, 19th December 2025
+                  <strong>Date:</strong> Friday, 4th April 2026
                 </p>
                 <p className="text-gray-700 text-sm mb-1">
-                  <strong>Time:</strong> 09:00 AM
+                  <strong>Time:</strong> 07:00 AM
                 </p>
                 <p className="text-gray-700 text-sm">
-                  <strong>Location:</strong> Accra, Ghana
+                  <strong>Location:</strong> University of Ghana Pool Side
                 </p>
               </div>
 
@@ -71,7 +71,7 @@ const EmailTemplate = ({ firstName }: { firstName: string }) => {
             {/* FOOTER */}
             <div className="bg-gray-100 py-4 text-center">
               <p className="text-xs text-gray-500">
-                © 2025 Livewell Festival — All rights reserved.
+                © 2026 Livewell Festival — All rights reserved.
               </p>
             </div>
           </div>

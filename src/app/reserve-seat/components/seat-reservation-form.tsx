@@ -100,7 +100,7 @@ export const SeatReservationForm = () => {
         Reserve Your Spot Today!
       </h2>
       <p className="text-neutral-900 mb-8 text-base font-semibold sm:text-base leading-6">
-        Join us at Livewell Festival 2025! Your presence will help us create a
+        Join us at Livewell Festival 2026! Your presence will help us create a
         vibrant community, share uplifting narratives, and spread valuable
         insights.
       </p>
