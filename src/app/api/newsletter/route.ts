@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     if (!email) {
       return NextResponse.json(
         { error: "Email is required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
             <!-- FOOTER -->
             <div style="background-color: #f1f1f1; padding: 14px 0; text-align: center;">
               <p style="color: #7b7b7b; font-size: 12px; margin: 0;">
-                © 2025 Livewell Festival — All rights reserved.
+                © 2026 Livewell Festival — All rights reserved.
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     console.error("Unexpected error", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : String(error) },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
